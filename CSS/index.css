@@ -12,6 +12,7 @@ div {
   height: 100px;
   background-color: lightyellow;
   border: 1px solid black;
+  font-size: 2rem;
   /* width: 30%; */
   /* flex-grow: 1; */
   font-size: 3rem;
