@@ -1,0 +1,109 @@
+body {
+  height: 200vh;
+}
+/* 
+div {
+  
+  background-color: red;
+} */
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: lightyellow;
+  border: 1px solid black;
+  /* width: 30%; */
+  /* flex-grow: 1; */
+  font-size: 3rem;
+}
+/* #box1 {
+  flex-grow: 1;
+} */
+
+#box2 {
+  flex-grow: 2;
+  visibility: hidden;
+}
+
+/* #box1 {
+  background-color: yellow;
+}
+
+#box2 {
+  background-color: green;
+  padding: 20px;
+  margin: 50px;
+  border: 5px solid black;
+} */
+
+/* attribute */
+[type="password"] {
+  background-color: purple;
+}
+
+/* combination */
+body div {
+}
+
+/* descendent */
+body > div {
+}
+
+/* universal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* pseudo class */
+.btn:hover {
+  background-color: red;
+}
+
+/* pseudo element */
+.btn::before {
+  content: "hi";
+}
+
+.static {
+  top: 10px;
+}
+
+.relative {
+  position: relative;
+  top: 30px;
+}
+
+.absolute {
+  position: absolute;
+  left: 50px;
+  top: 0;
+}
+
+.fixed {
+  position: fixed;
+  top: 50px;
+  right: 0;
+}
+
+.sticky {
+  position: sticky;
+  top: 50px;
+}
+
+.container {
+  /* height: 500px; */
+  display: grid;
+  /* flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start; */
+  grid-template-columns: 100px 100px 100px 100px;
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
