@@ -396,3 +396,175 @@
 // a.getCount();
 
 // const b = counter()
+
+// ======================================= JS 3 ===================================
+// const p = {
+//   sayHi() {
+//     console.log(`Hi, I'm ${this.name}`);
+//   },
+// };
+
+// const person1 = {
+//   name: "nicole",
+//   __proto__: p,
+// };
+
+// const person2 = {
+//   name: "adam",
+//   __proto__: p,
+// };
+
+// const person3 = {
+//   name: "bob",
+//   __proto__: p,
+// };
+
+// console.log(person2.sayHi());
+
+// person1.__proto__.age = 18;
+// person1.age = 10;
+// console.log(person1);
+// console.log(p);
+// console.log(person2);
+
+// const obj = {
+//   a: 1,
+//   b: 1,
+//   __proto__: {
+//     b: 2,
+//   },
+// };
+
+// console.log(obj.a);
+// console.log(obj.b);
+// console.log(obj);
+
+// constructor function
+// function Person(name) {
+//   this.name = name;
+//   this.sayHi = function () {
+//     console.log("say hi");
+//   };
+// }
+
+// // factory function
+// function Person2(name) {
+//   const obj = {};
+//   obj.name = name;
+//   obj.__proto__.walk = function () {
+//     console.log("walking...");
+//   };
+//   return obj;
+// }
+
+// const p2 = Person2("adam");
+// console.log(p2);
+
+// Person.prototype.walk = function () {
+//   console.log("walking...");
+// };
+
+// const p1 = new Person("nicole");
+// console.log(p1);
+// p1.sayHi();
+// p1.walk();
+
+// p1.__proto__.run = function () {
+//   console.log("running...");
+// };
+
+// p1.run();
+
+// class keyword is just a syntax sugar
+// OOP - inheritance, encapsulation, abstraction, polymorphism
+// inheritance - super, extend
+// encapsulation - hide information from public, make some variables private
+// abstraction - no instance, not supported in Javascript
+// polymorphism - no overloading, but we have overriding
+
+// instance method, class method, static method
+// class Person {
+//   #age;
+//   static count = 0;
+//   constructor(name, age) {
+//     this.name = name;
+//     this.#age = age;
+//     Person.count = Person.count + 1;
+//   }
+
+//   static getCount() {
+//     console.log(this);
+//     return this.count;
+//   }
+
+//   walk() {
+//     console.log(`${this.name} is walking...`);
+//   }
+
+//   set age(newAge) {
+//     console.log("setter");
+//     this.#age = newAge;
+//   }
+
+//   get age() {
+//     return `the age is ${this.#age} `;
+//   }
+// }
+
+// const p1 = new Person("nicole", 18);
+// p1.walk();
+// console.log(p1.age);
+// p1.age = 10;
+
+// p1.run = function () {
+//   console.log(`${this.name} is running`);
+// };
+
+// p1.run();
+
+// const p2 = new Person("adam", 18);
+// // p2.run();
+
+// console.log(Person.getCount());
+
+const arr = [1, 2, 3, 4, 5];
+console.log(arr);
+
+arr.__proto__.MyForEach = function (cb) {
+  for (let i = 0; i < this.length; i++) {
+    cb(this[i], i, this);
+  }
+};
+
+arr.MyForEach((value, index, array) => {
+  console.log(value, index, array);
+});
+
+// reduce, filter, map, find, slice, splice
+
+Array.prototype.mySplice = function (start, deleteCount, ...items) {
+  let tempArr;
+  let deletedElements = [];
+  if (deleteCount !== undefined) {
+    deletedElements = this.slice(start, start + deleteCount);
+    tempArr = [...this.slice(0, start), ...this.slice(start + deleteCount)];
+  }
+
+  if (items.length !== 0) {
+    tempArr = [
+      ...this.slice(0, start),
+      ...items,
+      ...this.slice(start + deleteCount),
+    ];
+  }
+
+  this.length = tempArr.length;
+  tempArr.forEach((element, index) => {
+    this[index] = element;
+  });
+
+  return deletedElements;
+};
+
+arr.mySplice(1, 2, 0, 1, 2, 3);
+console.log(arr);
