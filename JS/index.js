@@ -527,44 +527,55 @@
 
 // console.log(Person.getCount());
 
-const arr = [1, 2, 3, 4, 5];
-console.log(arr);
+// const arr = [1, 2, 3, 4, 5];
+// console.log(arr);
 
-arr.__proto__.MyForEach = function (cb) {
-  for (let i = 0; i < this.length; i++) {
-    cb(this[i], i, this);
-  }
-};
+// arr.__proto__.MyForEach = function (cb) {
+//   for (let i = 0; i < this.length; i++) {
+//     cb(this[i], i, this);
+//   }
+// };
 
-arr.MyForEach((value, index, array) => {
-  console.log(value, index, array);
-});
+// arr.MyForEach((value, index, array) => {
+//   console.log(value, index, array);
+// });
 
 // reduce, filter, map, find, slice, splice
 
-Array.prototype.mySplice = function (start, deleteCount, ...items) {
-  let tempArr;
-  let deletedElements = [];
-  if (deleteCount !== undefined) {
-    deletedElements = this.slice(start, start + deleteCount);
-    tempArr = [...this.slice(0, start), ...this.slice(start + deleteCount)];
-  }
+// Array.prototype.mySplice = function (start, deleteCount, ...items) {
+//   let tempArr;
+//   let deletedElements = [];
+//   if (deleteCount !== undefined) {
+//     deletedElements = this.slice(start, start + deleteCount);
+//     tempArr = [...this.slice(0, start), ...this.slice(start + deleteCount)];
+//   }
 
-  if (items.length !== 0) {
-    tempArr = [
-      ...this.slice(0, start),
-      ...items,
-      ...this.slice(start + deleteCount),
-    ];
-  }
+//   if (items.length !== 0) {
+//     tempArr = [
+//       ...this.slice(0, start),
+//       ...items,
+//       ...this.slice(start + deleteCount),
+//     ];
+//   }
 
-  this.length = tempArr.length;
-  tempArr.forEach((element, index) => {
-    this[index] = element;
-  });
+//   this.length = tempArr.length;
+//   tempArr.forEach((element, index) => {
+//     this[index] = element;
+//   });
 
-  return deletedElements;
+//   return deletedElements;
+// };
+
+// arr.mySplice(1, 2, 0, 1, 2, 3);
+// console.log(arr);
+
+const arrayLike = {
+  length: 3,
+  unrelated: "foo",
+  2: 4,
+  3: 33, // ignored by reverse() since length is 3
 };
+console.log(Array.prototype.reverse.call(arrayLike));
 
-arr.mySplice(1, 2, 0, 1, 2, 3);
-console.log(arr);
+// expected:  { 0: 4, 3: 33, length: 3, unrelated: 'foo' }
+//            { 0: 4, 2:4, 3: 33, length: 3, unrelated: 'foo' }
