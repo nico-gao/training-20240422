@@ -568,3 +568,40 @@
 
 // arr.mySplice(1, 2, 0, 1, 2, 3);
 // console.log(arr);
+
+// const foo = async () => 1;
+// // const foo1 = async () => Promise.resolve(1)
+
+// const p = new Promise((res) => {
+//   setTimeout(() => {
+//     res(2);
+//   }, 200);
+// });
+
+// const main = async () => {
+//   const a = await foo();
+//   const b = await p;
+//   console.log(a + b);
+// };
+
+// main();
+
+// new Promise((res)=>{
+
+//   res(a+b)
+// })
+
+// foo().then((data) => {
+//   p.then((data2) => {
+//     console.log(data + data2);
+//   });
+// });
+
+// Promise.all([foo(), p]).then((res) => {
+//   // console.log(res);
+//   console.log(res[0] + res[1]);
+// });
+
+// pagination
+// dividing data into smaller pieces to display
+// client side pagination (get all the data with one request), server side pagination (send a request for each page)
