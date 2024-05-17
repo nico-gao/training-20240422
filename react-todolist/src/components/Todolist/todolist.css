@@ -1,0 +1,42 @@
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    min-height: 300px;
+    gap: 20px;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.list-container {
+    flex-grow: 1;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.list-container ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 10px;
+    align-items: stretch;
+    padding: 5px;
+}
+.list-container ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.form-container input {
+    min-width: 0 !important;
+}
