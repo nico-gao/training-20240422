@@ -1,0 +1,27 @@
+.car-app {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 100px;
+    width: fit-content;
+    align-items: center;
+    gap: 50px;
+}
+
+.cars-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 50px;
+}
+
+.car {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
