@@ -6,16 +6,16 @@ import {
   FunctionalComponentWithCounter,
   FunctionalApp,
 } from "./components/FunctionalApp";
+import Counter from "./components/Counter";
 
 function App() {
   return (
     <div className="App">
-      <Context>
-        <FunctionalApp />
-        <ClassApp />
-        {/* <ClassComponentWithCounter foo={"foo"} />
+      <Counter />
+      {/* <FunctionalApp />
+      <ClassApp /> */}
+      {/* <ClassComponentWithCounter foo={"foo"} />
       <FunctionalComponentWithCounter /> */}
-      </Context>
     </div>
   );
 }

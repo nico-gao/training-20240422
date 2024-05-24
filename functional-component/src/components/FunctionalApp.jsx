@@ -20,30 +20,30 @@ const useCounter = (initialValue) => {
   return [counter, handleAddOne];
 };
 
-const useFetch = (url) => {
-  const [data, setData] = useState();
-  const [loading, setLoading] = useState(false);
+// const useFetch = (url) => {
+//   const [data, setData] = useState();
+//   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(url)
-      .then(() => {
-        setData();
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+//   useEffect(() => {
+//     setLoading(true);
+//     fetch(url)
+//       .then(() => {
+//         setData();
+//       })
+//       .finally(() => {
+//         setLoading(false);
+//       });
+//   }, []);
 
-  return [data, loading];
-};
+//   return [data, loading];
+// };
 
-const A = () => {
-  const [counter, handleAddOne] = useCounter(1);
-  const [data, loading] = useFetch(url);
+// const A = () => {
+//   const [counter, handleAddOne] = useCounter(1);
+//   // const [data, loading] = useFetch(url);
 
-  return;
-};
+//   return;
+// };
 
 export const FunctionalApp = () => {
   const [counter, handleAddOne] = useCounter(1);
