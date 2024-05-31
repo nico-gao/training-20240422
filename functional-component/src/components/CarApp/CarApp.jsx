@@ -24,7 +24,7 @@ const TotalQuantity = () => {
 };
 
 const Car = ({ car }) => {
-  console.log(car);
+  // console.log(car);
   return (
     <div>
       <CarInfo car={car} />

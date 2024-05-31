@@ -5,7 +5,7 @@ import React, { createContext, useContext, useReducer, useState } from "react";
 
 const CounterContext = createContext();
 
-console.log(CounterContext);
+// console.log(CounterContext);
 
 // action : {type: "XXX"}
 function reducer(state, action) {

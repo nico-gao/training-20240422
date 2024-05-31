@@ -10,13 +10,15 @@ import Counter from "./components/Counter";
 import Counter2 from "./components/Counter2";
 import CarApp from "./components/CarApp/CarApp";
 import CarProvider from "./components/CarApp/CarContext";
+import ReduxCarApp from "./components/CarApp/ReduxCarApp";
 
 function App() {
   return (
     <div className="App">
-      <CarProvider>
+      <ReduxCarApp />
+      {/* <CarProvider>
         <CarApp />
-      </CarProvider>
+      </CarProvider> */}
       {/* <Counter2 /> */}
       {/* <Counter /> */}
       {/* <FunctionalApp />
