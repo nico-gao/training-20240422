@@ -11,11 +11,13 @@ import Counter2 from "./components/Counter2";
 import CarApp from "./components/CarApp/CarApp";
 import CarProvider from "./components/CarApp/CarContext";
 import ReduxCarApp from "./components/CarApp/ReduxCarApp";
+import ReduxCounter from "./components/ReduxCounter";
 
 function App() {
   return (
     <div className="App">
-      <ReduxCarApp />
+      {/* <ReduxCarApp /> */}
+      <ReduxCounter />
       {/* <CarProvider>
         <CarApp />
       </CarProvider> */}
