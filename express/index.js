@@ -5,6 +5,9 @@ const dotenv = require("dotenv");
 const app = express();
 const port = 3000;
 
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
 dotenv.config();
 
 app.use(express.json());
@@ -39,6 +42,13 @@ app.get("/", [middleware1, middleware2], (req, res) => {
 });
 
 app.get("/hello", (req, res) => {
+  let options = {
+    maxAge: 1000 * 60 * 15, // would expire after 15 minutes
+    httpOnly: true, // The cookie only accessible by the web server
+  };
+
+  // Set cookie
+  res.cookie("cookieName", "cookieValue", options);
   res.send("hello");
 });
 
